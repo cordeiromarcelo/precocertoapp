@@ -1,0 +1,37 @@
+{% extends 'principal/base.html' %}
+
+{% load django_tables2 %} 
+{% load static %}
+
+{% block cssprincial %} {% endblock %}
+ <link href="{% static 'principal/sb-admin-2.css' %}" rel="stylesheet">
+
+{% block liimports %} <li class="nav-item active"> {% endblock %}
+
+
+{% block content %}
+<!-- Page Wrapper -->
+    <div id="wrapper">
+        <div class="container-fluid">
+          <!-- Page Heading -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between" style="margin-top:20px">
+                  <h6 class="m-0 font-weight-bold text-primary">Histórico de Importações</h6>
+                  <div class="dropdown no-arrow">
+                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Filtrar
+                      <i class="fa fa-filter fa-sm fa-fw text-gray-400"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                    <form action="" method="get", class="filterform">
+                        {{ filter.form.as_p }}
+                        <input type="submit" value="Filtrar" class="btn btn-primary btn-user btn-block"/>
+                    </form>
+                    </div>
+                  </div>
+                </div>
+
+                {% render_table table %}
+        </div>
+    </div>
+
+{% endblock %}

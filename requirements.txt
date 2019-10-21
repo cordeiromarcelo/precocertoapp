@@ -1,0 +1,9 @@
+Django>=2.0,<3.0
+Django-simple-import==2.0.2
+django-tables2==2.1.1
+postgres==2.2.1
+psycopg2>=2.7,<3.0
+openpyxl==3.0.0
+celery==4.3.0
+redis==3.3.11
+django-filter

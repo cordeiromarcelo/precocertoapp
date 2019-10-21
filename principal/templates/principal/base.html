@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sales Import and Report</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link href="{% static 'vendor/fontawesome-free/css/all.min.css'%}" rel="stylesheet">
+    <link href="{% static 'vendor/simple-line-icons/css/simple-line-icons.css' %}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    {% block cssprincial %} <link href="{% static 'principal/landing-page.min.css' %}" rel="stylesheet"> {% endblock %}
+    <link href="{% static 'principal/style.css' %}" rel="stylesheet">
+
+  
+</head>
+    <body>
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
+        <a class="navbar-brand" href="#">SalesManager</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                {% block liimportar %} <li class="nav-item"> {% endblock %}
+                    <a class="nav-link" href="/">Importar</a>
+                </li>
+                {% block livisualizar %} <li class="nav-item"> {% endblock %}
+                    <a class="nav-link" href="/dash">Produtos</a>
+                </li>
+                {% block liimports %} <li class="nav-item"> {% endblock %}
+                    <a class="nav-link" href="/imports">Importações</a>
+                </li>
+                </ul>
+            </div>
+        </nav>
+
+        {% block content %} {% endblock %}
+
+    <!-- Scripts-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        
+        <script type="text/javascript" src="{% static 'js/bootstrap-filestyle.js' %}"></script>
+
+        <script type="text/javascript">
+        		$('#input').filestyle({
+				'placeholder' : 'Arquivo Excel',
+                text : 'Selecionar',
+                size : 'lg'});
+        </script>
+
+    </body>
+</html>
